@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <script src="js/rem.js"></script>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/myAccount.css" />
+    <link rel="stylesheet" href="js/need/layer.css" />
+    <link rel="stylesheet" type="text/css" href="css/mobileSelect.css">
+    <title>我的账簿</title>
+</head>
+
+<body>
+    <div class="contain">
+        <div class="con col a-c ">
+            <div class=" select-wrap row a-c">
+                <input class="select-input-text" id="selectOne" name="goodsName" readonly="readonly" value="父亲某某的讣告">
+                <img class="arrow" src="img/puplic/arrow.png" alt="">
+            </div>
+            <div class="total-wrap row a-c">
+                <div class="total-left col a-c j-c">
+                    <div class="total-num-title">随礼人数</div>
+                    <div class="total-num">45</div>
+                </div>
+                <div class="total-right col a-c j-c">
+                    <div class="total-sum-title">总计金额</div>
+                    <div class="total-sum"><span>¥</span>9400.00</div>
+                </div>
+            </div>
+            <div class="detail-wrap">
+                <div class="detal-title row j-b a-c">
+                    <div class="detail-left row a-c">
+                        <div class="detail-date">2020-03-09</div>
+                        <div class="detail-num">共3笔</div>
+                    </div>
+                    <div class="detail-total">¥6000.00</div>
+                </div>
+                <div class="detail-cont">
+                    <div class="detail-item row a-c j-b">
+                        <div class="name-wrap">
+                            <div class="name">李富贵</div>
+                            <div class="time">15：34：32</div>
+                        </div>
+                        <div class="sum">+ ¥200.00</div>
+                    </div>
+                    <div class="detail-item row a-c j-b">
+                        <div class="name-wrap">
+                            <div class="name">李富贵</div>
+                            <div class="time">15：34：32</div>
+                        </div>
+                        <div class="sum">+ ¥200.00</div>
+                    </div>
+                </div>
+            </div>
+            <div class="detail-wrap">
+                <div class="detal-title row j-b a-c">
+                    <div class="detail-left row a-c">
+                        <div class="detail-date">2020-03-09</div>
+                        <div class="detail-num">共3笔</div>
+                    </div>
+                    <div class="detail-total">¥6000.00</div>
+                </div>
+                <div class="detail-cont">
+                    <div class="detail-item row a-c j-b">
+                        <div class="name-wrap">
+                            <div class="name">李富贵</div>
+                            <div class="time">15：34：32</div>
+                        </div>
+                        <div class="sum">+ ¥200.00</div>
+                    </div>
+                    <div class="detail-item row a-c j-b">
+                        <div class="name-wrap">
+                            <div class="name">李富贵</div>
+                            <div class="time">15：34：32</div>
+                        </div>
+                        <div class="sum">+ ¥200.00</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/jquery-1.8.2.js"></script>
+<script src="js/noScaling.js"></script>
+<script src="js/layer.js"></script>
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+<script src="js/share.js"></script>
+<script src="js/coment.js"></script>
+<script src="js/mobileSelect.min.js" type="text/javascript"></script>
+<script>
+    $(function () {
+        // 商品下拉框
+        var mobileSelect1 = new MobileSelect({
+            trigger: '#selectOne',
+            title: '选择账簿',
+            wheels: [{
+                data: ['父亲某某的讣告', '某某的讣告']
+            }],
+            ensureBtnColor: '#686194',
+            position: [0],
+            callback: function (indexArr, data) {
+                if (data == "取消选择") {
+                    $("input[name='goodsName']").eq(0).val("");
+                } else {
+                    $("input[name='goodsName']").eq(0).val(data);
+                }
+            }
+        });
+        $(".detail-item").click(function () {
+            window.location.href = "./detail.html"
+        })
+
+    })
+</script>
+
+</html>

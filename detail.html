@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <script src="js/rem.js"></script>
+    <link rel="stylesheet" href="css/detail.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="js/need/layer.css" />
+    <title>随礼详情</title>
+</head>
+
+<body>
+    <div class="contain">
+        <div class="content col a-c j-c">
+            <div class="name">马书书</div>
+            <div class="num">+200.00</div>
+            <div class="detail-wrap">
+                <div class="item row j-b">
+                    <div class="left">当前状态</div>
+                    <div class="right">已收款</div>
+                </div>
+                <div class="item row j-b">
+                    <div class="left">到账时间</div>
+                    <div class="right">2020-05-03 15:52:21</div>
+                </div>
+                <div class="item row j-b">
+                    <div class="left">转账单号</div>
+                    <div class="right">12012231233212331044</div>
+                </div>
+                <div class="item row j-b">
+                    <div class="left">设置备忘</div>
+                    <div class="remarks row a-c">
+                        <div class="">填写备忘录</div>
+                        <img class="arrow" src="img/puplic/right.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="total-title">最近90天交易汇总</div>
+            <div class="total-wrap">
+                <div class="tatal-item row a-c j-b">
+                    <div class="data">2020-05-03 15:52:21</div>
+                    <div class="num">+  ¥200.00</div>
+                </div>
+                <div class="tatal-item row a-c j-b">
+                    <div class="data">2020-05-03 15:52:21</div>
+                    <div class="num">+  ¥200.00</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/jquery-1.8.2.js"></script>
+<script src="js/noScaling.js"></script>
+<script src="js/layer.js"></script>
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+<script src="js/share.js"></script>
+<script src="js/coment.js"></script>
+
+<script>
+    $(function () {
+        $(".remarks").click(function () {
+            window.location.href = "./remarks.html"
+        })
+    })
+</script>
+
+</html>
