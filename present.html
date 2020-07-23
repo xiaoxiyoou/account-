@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <script src="js/rem.js"></script>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/present.css" />
+    <link rel="stylesheet" href="js/need/layer.css" />
+    <title>追思礼金</title>
+</head>
+
+<body>
+    <div class="contain">
+        <div class="content col a-c j-c">
+            <img class="msg" src="img/present/msg.png" alt="">
+            <div class="present-wrap col a-c">
+                <div class="title-wrap row a-c">
+                    <img class="butterfly" src="img/present/butterfly.png" alt="">
+                    <div class="title">追思礼金</div>
+                    <img class="butterfly" src="img/present/butterfly.png" alt="">
+                </div>
+                <div class="item row a-c j-b">
+                    <div class="text">您的姓名</div>
+                    <input name="name" placeholder="请输入姓名" type="text">
+                </div>
+                <div class="item row j-b">
+                    <div class="text">您的手机</div>
+                    <input name="phone" placeholder="请输入手机号" type="number">
+                </div>
+                <div class="item row a-c j-b">
+                    <div class="text">随礼金额</div>
+                    <input name="sum" placeholder="请输入金额" type="number">
+                </div>
+                <div class="sum-wrap row">
+                    <div class="sum col a-c j-c" value="100"> 100</div>
+                    <div class="sum col a-c j-c" value="200">200</div>
+                    <div class="sum col a-c j-c" value="1000">1000</div>
+                </div>
+                <div class="msg-wrap row a-c j-b">
+                    <div class="text">追思留言</div>
+                    <div class="change-wrap row a-c">
+                        <img class="butterfly" src="img/present/change.png" alt="">
+                        <div class="">换一换</div>
+                    </div>
+                </div>
+                <div class="msgDetail"> 请节哀，不要让他们挂念就好了，你也不要伤心，
+                    毕竟人死不能复生，亲人失去痛离别，苦为人之湿短
+                    袖。不知何时再相见，天上人间月满花，加油吧! </div>
+                <div class="send col a-c j-c">发送</div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/jquery-1.8.2.js"></script>
+<script src="js/noScaling.js"></script>
+<script src="js/layer.js"></script>
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+<script src="js/share.js"></script>
+<script src="js/coment.js"></script>
+
+<script>
+    $(function () {
+        var alst = [
+            "追忆曾经，历历在目，谢谢你来过我的生命，留下如此美丽的故事。",
+
+            "回忆像说书的人，用充满乡音的口吻，每当想起你，时光总是那么叫人怀念！ ",
+
+            "遗忘才是真正的死亡，我们都在这里追思，你不曾离去，只是换种形式存在。",
+
+            "借由这里，托去我的思念，愿另一个世界的你，一切安好。",
+
+            "我敲打键盘的声音，是我为你祈祷的心，我在想你。",
+
+            "在我心里，你是永恒的美好，灿烂温暖，值得我念念不忘。",
+        ];
+        //点击自定义留言
+        $('.change-wrap').on('click', function () {
+            $(".msgDetail").html(alst[Math.floor(Math.random() * 6)]);
+
+        })
+        // 点击随礼金额
+        $(".sum").click(function () {
+            $("input[name ='sum']").attr("value", $(this).attr("value"));
+
+        });
+        // 点击发送
+        $(".send").click(function () {
+            if (!$("input[name='name']").val()) {
+                layer.msg("请输入您的姓名");
+                return false
+            } else if (!$("input[name='phone']").val()) {
+                layer.msg("请输入您的电话");
+                return false
+            } else if (!(/^1(3|4|5|6|7|8|9)\d{9}$/.test($("input[name='phone']").val()))) {
+                layer.msg("请输入正确手机号");
+                return false;
+            } else if (!$("input[name='sum']").val()) {
+                layer.msg("请输入金额");
+                return false
+            }
+            layer.msg("随礼成功，对方已收到您的礼金");
+
+        });
+
+    })
+</script>
+
+</html>

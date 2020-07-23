@@ -19,7 +19,7 @@
                 <img class="remark-img" src="img/puplic/edit.png" alt="">
                 <div class="remark-text">备注</div>
             </div>
-            <textarea placeholder="输入备注"></textarea>
+            <textarea id="textarea" placeholder="输入备注"></textarea>
             <div class="save col a-c j-c">保存</div>
         </div>
     </div>
@@ -33,6 +33,15 @@
 
 <script>
     $(function () {
+        // 解决Ios页面不会落
+        $("#textarea").blur(function () {
+            document.body.scrollTop = 0
+            document.documentElement.scrollTop = 0
+        })
+        $(".save").click(function(){
+            window.history.go(-1)
+        })
+
 
     })
 </script>

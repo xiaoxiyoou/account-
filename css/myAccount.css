@@ -26,6 +26,7 @@ input::-webkit-input-placeholder {
     background-color: #686194;
     border-radius: .1rem;
     color: #ffffff;
+    margin-top: .22rem;
 }
 
 .total-left {
